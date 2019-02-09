@@ -1,0 +1,36 @@
+---
+title: "Using reticulate"
+output: html_notebook
+---
+
+```{r setup}
+Sys.setenv(PATH = "$HOME/anaconda3/bin:$PATH")
+reticulate::use_condaenv('h2py')
+library(reticulate)
+```
+
+
+```{python}
+d1 = {"a" : 1,
+"b" : 2,
+"c" : 3}
+
+print(d1)
+```
+
+```{python}
+print(d1['a'])
+```
+
+
+
+
+```{python}
+import pandas as pd
+divvy = pd.read_csv('Zack_Master/Datasets/DivvyStationsMap.csv')
+```
+
+```{r}
+py$divvy
+```
+
